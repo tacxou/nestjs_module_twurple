@@ -9,9 +9,9 @@
 </p>
 
 <p align="center">
-  <a href="https://www.npmjs.com/org/The-Software-Compagny"><img src="https://img.shields.io/npm/v/@the-software-compagny/nestjs_module_twurple.svg" alt="NPM Version" /></a>
-  <a href="https://www.npmjs.com/org/The-Software-Compagny"><img src="https://img.shields.io/npm/l/@the-software-compagny/nestjs_module_twurple.svg" alt="Package License" /></a>
-  <a href="https://github.com/The-Software-Compagny/nestjs_module_rcon/actions/workflows/ci.yml"><img src="https://github.com/The-Software-Compagny/nestjs_module_rcon/actions/workflows/ci.yml/badge.svg" alt="Publish Package to npmjs" /></a>
+  <a href="https://www.npmjs.com/org/tacxou"><img src="https://img.shields.io/npm/v/@tacxou/nestjs_module_twurple.svg" alt="NPM Version" /></a>
+  <a href="https://www.npmjs.com/org/tacxou"><img src="https://img.shields.io/npm/l/@tacxou/nestjs_module_twurple.svg" alt="Package License" /></a>
+  <a href="https://github.com/tacxou/nestjs_module_rcon/actions/workflows/ci.yml"><img src="https://github.com/tacxou/nestjs_module_rcon/actions/workflows/ci.yml/badge.svg" alt="Publish Package to npmjs" /></a>
 </p>
 <br>
 
@@ -20,12 +20,19 @@ Twurple for NestJS Framework
 
 ## Install dependencies
 ```bash
-yarn add @the-software-compagny/nestjs_module_twurple
+yarn add @tacxou/nestjs_module_twurple
 ```
+## Tests
+```bash
+bun test tests
+bun test tests --watch
+bun test tests --coverage --coverage-reporter lcov
+```
+
 ## Instanciate
 ```ts
 // app.module.ts
-import { TwurpleModule, TwurpleOptions } from '@the-software-compagny/nestjs_module_twurple'
+import { TwurpleModule, TwurpleOptions } from '@tacxou/nestjs_module_twurple'
 
 TwurpleModule.forRootAsync({
   imports: [ConfigModule],
@@ -38,7 +45,7 @@ TwurpleModule.forRootAsync({
 ## Usage
 ```ts
 // twitch.service.ts
-import { FactorydriveService } from '@the-software-compagny/nestjs_module_factorydrive'
+import { FactorydriveService } from '@tacxou/nestjs_module_factorydrive'
 
 @Injectable()
 export class FileStorageService {
