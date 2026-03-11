@@ -1,5 +1,8 @@
 import { AuthProvider } from '@twurple/auth'
 import { ModuleMetadata, Type } from '@nestjs/common'
+import { ChatClientOptions } from '@twurple/chat'
+import { ApiConfig } from '@twurple/api'
+import { PubSubClientConfig } from '@twurple/pubsub/lib/PubSubClient'
 
 export interface TwurpleModuleOptions {
   config: TwurpleOptions
@@ -17,9 +20,9 @@ export interface TwurpleModuleFeatureOptions {
 export interface TwurpleOptions {
   authProvider: AuthProvider
   features?: {
-    api?: TwurpleModuleFeatureOptions
-    chat?: TwurpleModuleFeatureOptions
-    pubsub?: TwurpleModuleFeatureOptions
+    api?: TwurpleModuleFeatureOptions & Partial<ApiConfig>
+    chat?: TwurpleModuleFeatureOptions & Partial<ChatClientOptions>
+    pubsub?: TwurpleModuleFeatureOptions & Partial<PubSubClientConfig>
   }
 }
 

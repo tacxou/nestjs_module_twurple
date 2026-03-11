@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "strict": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@tacxou/nestjs_module_twurple": ["../src/index.ts"],
+      "@nestjs/common": ["../node_modules/@nestjs/common"],
+      "@nestjs/common/*": ["../node_modules/@nestjs/common/*"],
+      "@nestjs/core": ["../node_modules/@nestjs/core"],
+      "@nestjs/core/*": ["../node_modules/@nestjs/core/*"]
+    }
+  },
+  "include": ["src/**/*.ts"]
+}

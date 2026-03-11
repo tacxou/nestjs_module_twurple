@@ -1,0 +1,18 @@
+{
+  "name": "playground",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@nestjs/config": "^4.0.3",
+    "@tacxou/nestjs_module_twurple": "link:../",
+    "@twurple/api": "^8.0.3",
+    "@twurple/chat": "^8.0.3",
+    "@twurple/pubsub": "^7.4.0",
+    "@twurple/auth": "^8.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "@types/bun": "latest",
+    "typescript": "latest"
+  }
+}
