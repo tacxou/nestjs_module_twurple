@@ -39,18 +39,24 @@ describe('twurple.utils tokens', () => {
 })
 
 describe('twurple.utils factories', () => {
-  it('createTwurpleApiConnection retourne null si feature api absente', async () => {
+  it('createTwurpleApiConnection retourne un proxy si feature api absente', async () => {
     const result = await createTwurpleApiConnection({ config: { authProvider: {} }, features: {} } as any)
-    expect(result).toBeNull()
+    expect(result).not.toBeNull()
+    expect(typeof result).toBe('object')
+    expect(() => (result as any).getUsers()).toThrow(/Twurple feature "api" is disabled/)
   })
 
-  it('createTwurpleChatConnection retourne null si feature chat absente', async () => {
+  it('createTwurpleChatConnection retourne un proxy si feature chat absente', async () => {
     const result = await createTwurpleChatConnection({ config: { authProvider: {} }, features: {} } as any)
-    expect(result).toBeNull()
+    expect(result).not.toBeNull()
+    expect(typeof result).toBe('object')
+    expect(() => (result as any).connect()).toThrow(/Twurple feature "chat" is disabled/)
   })
 
-  it('createTwurplePubsubConnection retourne null si feature pubsub absente', async () => {
+  it('createTwurplePubsubConnection retourne un proxy si feature pubsub absente', async () => {
     const result = await createTwurplePubsubConnection({ config: { authProvider: {} }, features: {} } as any)
-    expect(result).toBeNull()
+    expect(result).not.toBeNull()
+    expect(typeof result).toBe('object')
+    expect(() => (result as any).onRedemption()).toThrow(/Twurple feature "pubsub" is disabled/)
   })
 })
